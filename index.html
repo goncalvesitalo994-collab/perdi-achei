@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perdi & Achei| Central de achados e perdidos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="hero" id="inicio" aria-label="Inicio">
+        <!--Links-->
+        <nav class="nav">
+            <a class="marca" href="#inicio">
+                <img src="assets/logo-perdi-achei.svg" alt="" class="marca-img" />
+            </a>
+            <div class="nav-links" aria-label="Navegação Principal">
+                <a href="#cadastro">Cadastrar</a>
+                <a href="#cadastro">registros</a>
+            </div>
+        </nav>
+        <!--CONTEUDO CENTRAL-->
+        <section class="hero-conteudo">
+            <div class="hero-texto">
+                <h1>Perdeu? Achou? Registre aqui</h1>
+                <p>Uma Central simples para Cadastro objetos perdidos ou encontrados na unipar.</p>
+            <div class="acao">
+                <!--CLASS = "btn-principal": encapsulamento de classes--->
+                <a href="#cadastro" class="btn btn-principal">
+                    Cadastro Objeto
+                </a>
+                <a href="#registro" class="btn btn-secundario">
+                    Ver registros
+                </a>
+            </div>
+        </div>
+        <!--BARRA LATERAL DO SITE-->
+        <aside class="hero-card" aria-label="Resumo do Sistema">
+            <img src="assets/hero-achados-perdidos.svg" alt="Ilustração de Objetos"/>
+            <div class="hero-metricas">
+                <!--LEMBRANÇA PARA O FUTURO: O JS VAI ATUALIZAR ISSO-->
+                <div>
+            <strong id="totalRegistros">0</strong>
+            <span>registros</span>
+                </div>
+            </div>
+        </aside>
+        </section>
+    </header>
+    <main class="container">
+        <section class="grid-principal">
+            <!--ARTICLE: ARTIGO, "FOCO DO SITE"-->
+            <article class="card" id="cadastro">
+                <div class="card-cabecalho">
+                    <img src="assets/formulario.svg" alt=""/>
+                    <div>
+                        <h2>Cadastrar Objeto</h2>
+                        <p>Imforme os dados do objeto</p>
+                    </div>
+                </div>
+                <!--AUTO COMPLETO = OFF, NAO SUGERE CAMPOS -->
+                <form id="formulario" autocomplete="off">
+                    <label>Nome do Objeto</label>
+                    <input type="text" name="objeto" maxlength="80" placeholder="Ex.: Mochila, Chave, Carteira" required/>
+                    <!--VOU CRIAR UMA DIV PARA DIVIDIR EM COLUNAS-->
+                    <div class="coluna-dois">
+                        <label>tipo</label>
+                        <!--CAMPO DE SELEÇÃO-->
+                        <select name="tipo" required>
+                            <option value="">Selecione</option>
+                            <option value="perdido">Perdido</option>
+                            <option value="encontrado">Encontrado</option>
+                        </select>
+                        <label>Data</label>
+                        <input type="date" name="Data" required/>
+                    </div>
+                    <label>Local</label>
+                    <input type="text" name="local" maxlength="100" placeholder="Ex.: Laboratorio 2, Biblioteca, patip" required/>
+                    <label>Descrição</label>
+                    <!--<TEXTAREA> PERMITE TEXTO LONGO E LINHAS-->
+                        <textarea name="descrição" maxlength="360" placeholder="Descreva cor, detalhe...." required>
+                        </textarea>
+                        <label>Contato</label>
+                        <input type="text" name="contato" maxlength="100" placeholder="E-mail, Whatsapp..." required/>
+                        
+                        <button type="submit" class="btn btn-form">Salvar</button>
+                </form>
+            </article>
+        </section>
+    </main>
+
+</body>
+
+</html>
